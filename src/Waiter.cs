@@ -9,9 +9,14 @@ namespace Ucu.Poo.Restaurant
     public class Waiter
     {
         
-        private string Name { get; set; }
+        public string Name { get; set; }
         private List<Table> assignedTables = new List<Table>();
-        
+
+        public Waiter(string name)// constructor
+        {
+            Name = name;
+            
+        }
         
         public void AssignTable(Table table)
         {
