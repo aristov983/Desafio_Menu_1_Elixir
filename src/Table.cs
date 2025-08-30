@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Data;
 
 namespace Ucu.Poo.Restaurant
 {
@@ -8,20 +9,16 @@ namespace Ucu.Poo.Restaurant
     public class Table
     {
         private List<Dish> order = new List<Dish>();
-        private int number;
-        private bool isoccupied = false;
+        public bool IsOccupied {get;set;}
+        public int Number{get;set;}
 
-        public int Number
+        public Table(int number, bool isOccupied)
         {
-            get
-            {
-                return number;
-            }
-            set
-            {
-                number = value;
-            }
+            Number = number;
+            IsOccupied = isOccupied;
         }
+        
+      
 
         public List<Dish> Order
         {
@@ -33,12 +30,13 @@ namespace Ucu.Poo.Restaurant
 
         public void Occupy() //Marca la mesa como ocupada
         {
-            isoccupied = true;
+            IsOccupied = true;
         }
 
-        public void Free() //Marca la mesa como libre
+        public void Free() //Marca la mesa como libre y vacía la lista de pedidos
         {
-            isoccupied = false;
+            IsOccupied = false;
+            order.Clear();
         }
 
         public void AddToOrder(Dish plate) //agrega el plato plate a la lista order
