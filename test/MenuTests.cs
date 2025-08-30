@@ -26,7 +26,7 @@ namespace Ucu.Poo.Restaurant.Tests
             Menu menu = new Menu();
 
             menu.AddDish(dish);
-            menu.RemoveDish(dish);
+            menu.DellDish(dish);
 
             Dish foundDish = menu.GetDishByName(name);
             Assert.That(foundDish, Is.Null);

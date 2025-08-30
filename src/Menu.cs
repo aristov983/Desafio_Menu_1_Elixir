@@ -11,24 +11,7 @@ namespace Ucu.Poo.Restaurant
     public class Menu
     {
         public List<Dish> dishes = new List<Dish>();
-
-        public class Dish
-        {
-            public string Name { get; set; }
-            public decimal Price { get; set; }
-
-            public Dish(string name, decimal price)
-            {
-                Name = name;
-                Price = price;
-            }
-
-            public override string ToString()
-            {
-                return $"{Name} - ${Price}";
-            }
-        }
-
+        
         public void AddDish(Dish dish)
         {
             dishes.Add(dish);

@@ -9,13 +9,12 @@ namespace Ucu.Poo.Restaurant
     public class Table
     {
         private List<Dish> order = new List<Dish>();
-        public bool IsOccupied {get;set;}
+        public bool IsOccupied { get; set; } = true;
         public int Number{get;set;}
 
-        public Table(int number, bool isOccupied)
+        public Table(int number)
         {
             Number = number;
-            IsOccupied = isOccupied;
         }
         
       
